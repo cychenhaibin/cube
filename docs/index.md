@@ -6,7 +6,7 @@ hero:
     - text: 立即上手
       link: /guide/quick-start
     - text: Github
-      link: /
+      link: https://github.com/cychenhaibin/cube
 features:
   - title: 现代化主题风格
     image: 💠
