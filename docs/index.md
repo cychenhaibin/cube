@@ -1,41 +1,49 @@
 ---
 hero:
-  title: cube
-  description: 一个基于 React 的组件库
+  title: Cube - <b>A React UI</b>
+  description: 一个基于 React 的 UI 组件库
   actions:
     - text: 立即上手
       link: /guide/quick-start
     - text: Github
       link: /
 features:
-  - title: 组件丰富
-    emoji: 💎
-    description: 提供按钮、输入框、选择器、弹窗、提示、树形控件等数十种常用组件，覆盖绝大多数业务场景，开箱即用。
-  - title: 主题灵活
-    emoji: 🌈
-    description: 支持主题定制和暗黑模式，轻松适配不同品牌和产品风格，满足多样化 UI 需求。
-  - title: 性能优异
-    emoji: 🚀
-    description: 组件按需加载，体积小巧，渲染高效，适合大中型项目，助力提升页面性能。
-  - title: 设计一致
-    emoji: 🎨
-    description: 遵循统一的设计规范，组件风格高度一致，保证产品界面专业美观。
-  - title: 易用性强
-    emoji: 🛠️
-    description: 组件 API 设计简洁直观，文档详细，配套丰富的代码示例，开发者上手无门槛。
-  - title: TypeScript 支持
-    emoji: 📦
-    description: 全量 TypeScript 类型定义，智能提示完善，开发体验更佳。
-  - title: 国际化
-    emoji: 🌏
-    description: 内置多语言支持，轻松实现国际化应用，满足全球化业务需求。
-  - title: 响应式设计
-    emoji: 📱
-    description: 组件自适应多端屏幕，兼容 PC 和移动端，适配各种设备。
-  # - title: 社区活跃
-  #   emoji: 🤝
-  #   description: 拥有活跃的开发社区，持续维护与更新，问题响应及时，生态完善。
-  - title: 测试完善
-    emoji: ✅
-    description: 组件均配备完善的单元测试，保障每次发布的稳定性和可靠性。
+  - title: 现代化主题风格
+    image: 💠
+    description: 本主题包采用了流动色、毛玻璃、光影质感、自然动效等现代化的设计表现手法，将界面以更加简约、美观的方式呈现，使得文档更加直观、易读、易用
+    row: 6
+
+  - title: 基于 Ant Design 与 CSSinJS
+    description: 本主题包使用 antd 作为基础组件库，并使用了 CSSinJS 实现样式方案，帮助更好地控制样式的细节，提高样式的复用性和可维护性。底层使用了 antd-style 样式库，在书写样式上更加灵活、可读、易于维护。<quotient>本主题包算是开发 antd-style 时的一个副产物</quotient>
+    link: /guide/style
+    imageType: light
+    image: https://gw.alipayobjects.com/zos/hitu-asset/c88e3678-6900-4289-8538-31367c2d30f2/hitu-1609235995955-image.png
+    row: 9
+
+  - title: 亮暗色主题模式一键切换
+    link: /guide/theme
+    description: 本文档基于 antd v5 自定义了亮色与暗色主题算法，默认提供美观易用的亮暗色主题。用户可以根据自己的喜好选择主题模式，在不同的光线环境下都能获得良好的阅读体验。
+    image: https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*8KE7T7l39J0AAAAAAAAAAAAADoN6AQ/original
+    imageType: primary
+
+  - title: 精美的语法高亮
+    description: 本主题包提供准确、精美的语法高亮特性。底层采用了现代化的语法高亮库 Shiki 与 Prism，并提供了丰富的代码高亮方案，帮助用户更好地阅读代码 <quotient>后续会考虑支持代码块片段高亮、关键词高亮等特性</quotient>
+    link: /guide/syntax-highlighter
+    image: https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*1qLNRrRGFsQAAAAAAAAAAAAADoN6AQ/original
+    imageType: primary
+    row: 9
+
+  - title: 组件灵活复用
+    description: 本主题包为本地主题定制提供了很高的灵活度，默认导出了主题包中的精品组件，可以将组件作为独立的模块进行复用，开发者可以在 dumi 本地主题包中自由组合使用
+    image: https://mdn.alipayobjects.com/huamei_rqvucu/afts/img/A*6sjjRa7lLhAAAAAAAAAAAAAADoN6AQ/original
+    imageType: primary
+    link: /components
+    row: 8
+
+  - title: 移动端适配良好
+    description: 本主题包对移动端适配良好，基于 CSSinJS 的灵活样式方案，多套布局实现轻而易举。用户多端操作体验一致且顺滑
+    image: 📱
+    imageType: light
+    row: 6
+    hero: true
 ---
