@@ -1,0 +1,133 @@
+@import '../styles/common.less';
+
+.ice-tree {
+  position: relative;
+  width: 100%;
+  color: @cube-text-color-primary;
+  font-size: @cube-font-size-base;
+  line-height: 1.5;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  .ice-tree-node {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 0;
+    cursor: pointer;
+    transition: all @cube-animation-duration-base;
+
+    &:hover {
+      background-color: @cube-default-bg;
+    }
+
+    &.ice-tree-node-disabled {
+      color: @cube-disabled-color;
+      cursor: not-allowed;
+    }
+
+    &.ice-tree-node-selected {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-left: 24px;
+      color: @cube-primary-color;
+      background-color: @cube-primary-bg;
+    }
+
+    .ice-tree-node-indent {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .ice-tree-switcher {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &.ice-tree-switcher-open {
+        transform: rotate(90deg);
+      }
+    }
+
+    .ice-checkbox {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin: 4px 8px 4px 0;
+      vertical-align: middle;
+    }
+
+    .ice-tree-node-content {
+      display: inline-block;
+      padding: 0 4px;
+      vertical-align: middle;
+    }
+
+    .ice-tree-loading-icon {
+      display: inline-block;
+      margin-left: 8px;
+      color: @cube-primary-color;
+      animation: loading 1s infinite linear;
+    }
+
+    .ice-tree-child-nodes {
+      position: relative;
+      width: calc(100% - 24px);
+      margin-left: 24px;
+      padding-left: 0;
+    }
+
+    &-drag-over {
+      position: relative;
+      background-color: @cube-primary-bg;
+
+      &::before {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        height: 2px;
+        background-color: @cube-primary-color;
+        content: '';
+      }
+
+      &-top::before {
+        top: 0;
+      }
+
+      &-bottom::before {
+        bottom: 0;
+      }
+    }
+
+    &[draggable='true'] {
+      cursor: move;
+      user-select: none;
+
+      &:hover {
+        background-color: rgba(24, 144, 255, 0.05);
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

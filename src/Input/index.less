@@ -1,0 +1,144 @@
+@import '../styles/common.less';
+
+.ice-input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: @cube-default-color;
+  font-size: 14px;
+  line-height: 1.5715;
+  background-color: @cube-default-bg;
+  border: 1px solid @cube-default-border-color;
+  border-radius: 6px;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: @cube-highlight-border-color;
+  }
+
+  &.ice-input-focused {
+    border-color: @cube-highlight-border-color;
+    outline: 0;
+    box-shadow: 0 0 0 2px @cube-highlight-color;
+  }
+
+  &.ice-input-disabled {
+    color: @cube-disabled-color;
+    background-color: @cube-disabled-bg;
+    cursor: not-allowed;
+    opacity: 1;
+
+    &:hover {
+      border-color: @cube-disabled-border-color;
+    }
+  }
+
+  &.ice-input-readonly {
+    background-color: @cube-disabled-bg;
+  }
+
+  .ice-input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: none;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      color: @cube-disabled-color;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .ice-input-prefix {
+    margin-right: 4px;
+    color: @cube-disabled-color;
+  }
+
+  .ice-input-suffix {
+    margin-left: 4px;
+    color: @cube-disabled-color;
+    cursor: pointer;
+  }
+
+  .ice-input-clear {
+    margin-left: 4px;
+    color: @cube-disabled-color;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &:hover {
+      color: @cube-default-color;
+    }
+  }
+
+  &:hover .ice-input-clear {
+    opacity: 1;
+  }
+
+  .ice-input-password-toggle {
+    margin-left: 4px;
+    color: @cube-disabled-color;
+    cursor: pointer;
+
+    &:hover {
+      color: @cube-default-color;
+    }
+  }
+
+  &.ice-input-small {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+
+  &.ice-input-large {
+    padding: 6px 11px;
+    font-size: 16px;
+  }
+}
+
+// Demo styles
+.ice-input-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  max-width: 100%;
+
+  .demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .demo-title {
+      color: @cube-default-color;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .demo-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+
+      .ice-input-wrapper {
+        width: auto;
+        min-width: 200px;
+      }
+    }
+  }
+}

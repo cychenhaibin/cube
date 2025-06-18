@@ -1,0 +1,92 @@
+@import '../styles/common.less';
+
+.ice-rate {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  &-items {
+    position: relative;
+    display: inline-flex;
+  }
+
+  &-item {
+    position: relative;
+    margin-right: @cube-padding-sm;
+
+    // 未选中状态
+    color: @cube-disabled-bg;
+    transition: transform @cube-animation-duration-fast ease-in-out;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // 悬停效果
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    // 选中状态
+    &-active {
+      color: @cube-warning-color;
+    }
+
+    // 半选状态
+    &-half {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 50%;
+        background-color: @cube-default-bg;
+        mix-blend-mode: color;
+        content: '';
+      }
+    }
+  }
+
+  &-text {
+    margin-left: @cube-padding-sm;
+    color: @cube-text-color-secondary;
+    font-size: @cube-font-size-base;
+  }
+
+  &-small {
+    font-size: @cube-font-size-lg;
+
+    .ice-rate-text {
+      font-size: @cube-font-size-sm;
+    }
+  }
+
+  &-large {
+    font-size: 24px;
+
+    .ice-rate-text {
+      font-size: @cube-font-size-lg;
+    }
+  }
+
+  // 禁用状态
+  &-disabled {
+    .ice-rate-item {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  // 只读状态
+  &-readonly {
+    .ice-rate-item {
+      cursor: default;
+    }
+  }
+}
