@@ -37,4 +37,4 @@ cube 是一个基于 React 的 UI 组件库，提供了一系列高质量的组�
 
 ## 🤝 贡献
 
-欢迎参与 cube 的开发，请查看 [贡献指南](./guide/contributing) 了解如何参与贡献。
+欢迎参与 cube 的开发，请查看 [贡献指南](./contributing) 了解如何参与贡献。
