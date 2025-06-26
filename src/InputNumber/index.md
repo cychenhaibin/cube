@@ -1,6 +1,9 @@
-# InputNumber 数字输入框
-
-通过鼠标或键盘，输入范围内的数值。
+---
+title: InputNumber 数字输入框
+description: 通过鼠标或键盘，输入范围内的数值。
+demo:
+  cols: 2
+---
 
 ## 何时使用
 
@@ -10,128 +13,14 @@
 
 ## 代码演示
 
-### 基础用法
+<code src="./demos/demo1.tsx">基本使用</code>
+<code src="./demos/demo2.tsx">禁用状态</code>
+<code src="./demos/demo3.tsx">步进器</code>
+<code src="./demos/demo4.tsx">精度</code>
+<code src="./demos/demo6.tsx">按钮带前缀和后缀位置</code>
+<code src="./demos/demo5.tsx">不同尺寸</code>
+<code src="./demos/demo7.tsx" description="通过 `min` 和 `max` 属性可以限制输入值的范围。当达到限制时，对应的加减按钮会被禁用。">最大值最小值</code>
 
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return <InputNumber defaultValue={0} onChange={(value) => console.log(value)} />;
-};
-```
-
-### 禁用状态
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return <InputNumber disabled defaultValue={0} />;
-};
-```
-
-### 步进器
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return <InputNumber defaultValue={0} step={2} />;
-};
-```
-
-### 精度
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return <InputNumber defaultValue={0.23} step={0.1} precision={2} />;
-};
-```
-
-### 不同尺寸
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return (
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '20px',
-        flexWrap: 'wrap',
-      }}
-    >
-      <InputNumber size="small" defaultValue={0} />
-      <InputNumber size="middle" defaultValue={0} />
-      <InputNumber size="large" defaultValue={0} />
-    </div>
-  );
-};
-```
-
-### 按钮位置
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return (
-    <div style={{ width: '100%', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-      <InputNumber buttonPosition="left" defaultValue={0} />
-      <InputNumber buttonPosition="right" defaultValue={0} />
-    </div>
-  );
-};
-```
-
-### 带前缀和后缀
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => {
-  return (
-    <div style={{ width: '100%', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-      <InputNumber prefix="$" defaultValue={0} />
-      <InputNumber suffix="%" defaultValue={0} />
-    </div>
-  );
-};
-```
-
-## 最大值最小值
-
-通过 `min` 和 `max` 属性可以限制输入值的范围。当达到限制时，对应的加减按钮会被禁用。
-
-```tsx
-import React from 'react';
-import { InputNumber } from 'cube';
-
-export default () => (
-  <div style={{ width: '100%', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-    {/* 限制最小值为 0，最大值为 10 */}
-    <InputNumber min={0} max={10} defaultValue={5} />
-
-    {/* 限制最小值为 -10，最大值为 10 */}
-    <InputNumber min={-10} max={10} defaultValue={0} />
-
-    {/* 限制最小值为 0，最大值为 100，步长为 10 */}
-    <InputNumber min={0} max={100} step={10} defaultValue={50} />
-  </div>
-);
-```
 
 ## API
 
