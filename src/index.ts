@@ -1,4 +1,3 @@
-export { default as Foo } from './Foo';
 export { default as Button } from './button';
 export { default as message } from './message/message';
 export { default as Input } from './input';
