@@ -13,4 +13,5 @@ export { default as Radio } from './radio';
 export { default as Checkbox } from './checkbox';
 export { default as Select } from './select';
 export { default as InputNumber } from './inputnumber';
-// export { default as FloatButton } from './floatbutton';
+export { default as FloatButton } from './floatbutton';
+export { default as Breadcrumb } from './breadcrumb';

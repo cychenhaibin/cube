@@ -45,6 +45,10 @@ export interface SelectProps {
   };
   isMulti?: boolean;
   isSearchable?: boolean;
+  /**
+   * 控制下拉菜单展开方式，click 或 hover
+   */
+  trigger?: 'click' | 'hover';
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -70,6 +74,7 @@ const Select: React.FC<SelectProps> = ({
   locale,
   isMulti,
   isSearchable,
+  trigger = 'click',
 }) => {
   multiple = typeof isMulti === 'boolean' ? isMulti : multiple;
   filterable = typeof isSearchable === 'boolean' ? isSearchable : filterable;
@@ -93,6 +98,7 @@ const Select: React.FC<SelectProps> = ({
   const [filteredOptions, setFilteredOptions] = useState<SelectOptions>(options);
   const selectRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const timer = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     console.log('值变化:', { value, innerValue });
@@ -173,7 +179,7 @@ const Select: React.FC<SelectProps> = ({
       if (value === undefined) {
         setInnerValue(newValues);
       }
-      onChange?.(newValues);
+      onChange?.(Array.isArray(newValues) ? newValues : []);
     } else {
       if (value === undefined) {
         setInnerValue(selectedValue);
@@ -190,7 +196,7 @@ const Select: React.FC<SelectProps> = ({
     if (value === undefined) {
       setInnerValue(newValue);
     }
-    onChange?.(newValue);
+    onChange?.(multiple ? [] : '');
     onClear?.();
   };
 
@@ -362,8 +368,20 @@ const Select: React.FC<SelectProps> = ({
   };
 
   const handleSelectorClick = () => {
-    if (!disabled) {
+    if (!disabled && trigger === 'click') {
       setIsOpen(!isOpen);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (timer.current) clearTimeout(timer.current);
+    if (!disabled && trigger === 'hover') {
+      setIsOpen(true);
+    }
+  };
+  const handleMouseLeave = () => {
+    if (trigger === 'hover') {
+      timer.current = setTimeout(() => setIsOpen(false), 150);
     }
   };
 
@@ -414,7 +432,12 @@ const Select: React.FC<SelectProps> = ({
       })}
       style={style}
     >
-      <div className="ice-select-selector" onClick={handleSelectorClick}>
+      <div
+        className="ice-select-selector"
+        onClick={handleSelectorClick}
+        onMouseEnter={trigger === 'hover' ? handleMouseEnter : undefined}
+        onMouseLeave={trigger === 'hover' ? handleMouseLeave : undefined}
+      >
         {renderSelection()}
         {clearable && currentValue && !disabled && (
           <span className="ice-select-clear" onClick={handleClear}>
@@ -425,7 +448,15 @@ const Select: React.FC<SelectProps> = ({
           <Icon name={'icon_double_screen'} size={size} />
         </span>
       </div>
-      {isOpen && !disabled && <div className="ice-select-dropdown">{renderDropdown()}</div>}
+      {isOpen && !disabled && (
+        <div
+          className="ice-select-dropdown"
+          onMouseEnter={trigger === 'hover' ? handleMouseEnter : undefined}
+          onMouseLeave={trigger === 'hover' ? handleMouseLeave : undefined}
+        >
+          {renderDropdown()}
+        </div>
+      )}
     </div>
   );
 };

@@ -8,13 +8,14 @@ demo:
 ## 代码演示
 
 <code src="./demos/demo1.tsx" description="适用广泛的基础单选。">基本使用</code>
-<code src="./demos/demo3.tsx" description="选择器不可用状态。">禁用状态</code>
-<code src="./demos/demo6.tsx" description="包含清空按钮，可将选择器清空为初始状态。">可清空单选</code>
-<code src="./demos/demo2.tsx" description="适用性较广的基础多选，用 Tag 展示已选项。">多选</code>
-<code src="./demos/demo4.tsx" description="备选项进行分组展示。">分组</code>
-<code src="./demos/demo5.tsx" description="可以利用搜索功能快速查找选项。">可搜索</code>
+<code src="./demos/demo2.tsx" description="选择器不可用状态。">禁用状态</code>
+<code src="./demos/demo3.tsx" description="包含清空按钮，可将选择器清空为初始状态。">可清空单选</code>
+<code src="./demos/demo4.tsx" description="适用性较广的基础多选，用 Tag 展示已选项。">多选</code>
+<code src="./demos/demo5.tsx" description="备选项进行分组展示。">分组</code>
+<code src="./demos/demo6.tsx" description="可以利用搜索功能快速查找选项。">可搜索</code>
 <code src="./demos/demo7.tsx" description="从服务器搜索数据，输入关键字进行查找。">远程搜索</code>
 <code src="./demos/demo8.tsx" description="可以自定义备选项的渲染内容。">自定义选项</code>
+<code src="./demos/demo9.tsx" description="支持点击或悬浮展开下拉菜单，通过 trigger 属性控制。">展开方式（trigger）</code>
 
 ## API
 
@@ -41,6 +42,7 @@ demo:
 | className | 自定义类名 | `string` | - |
 | style | 自定义样式 | `React.CSSProperties` | - |
 | locale | 语言包配置 | `{ placeholder?: string; noData?: string; loading?: string; }` | - |
+| trigger | 控制下拉菜单展开方式，支持 `click`（点击）和 `hover`（悬浮） | `'click' \| 'hover'` | `'click'` |
 
 ### SelectOption
 
