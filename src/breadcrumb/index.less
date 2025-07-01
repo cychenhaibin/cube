@@ -1,38 +1,44 @@
-.cube-breadcrumb {
+@import '../styles/common.less';
+@import '../styles/mobile.less';
+
+@prefix: 'cube';
+@breadcrumbPrefix: ~'@{prefix}-breadcrumb';
+
+.@{breadcrumbPrefix} {
   display: flex;
   align-items: center;
   font-size: 14px;
-  .cube-breadcrumb-item {
+  .@{breadcrumbPrefix}-item {
     display: flex;
     align-items: center;
-    .cube-breadcrumb-icon {
+    .@{breadcrumbPrefix}-icon {
       margin-right: 4px;
       display: flex;
       align-items: center;
     }
-    .cube-breadcrumb-link {
-      color: #1677ff;
+    .@{breadcrumbPrefix}-link {
+      color: @cube-primary-color;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
       }
     }
-    .cube-breadcrumb-text {
-      color: #333;
+    .@{breadcrumbPrefix}-text {
+      color: @cube-default-color;
     }
-    .cube-breadcrumb-dropdown {
+    .@{breadcrumbPrefix}-dropdown {
       margin-left: 4px;
       select {
         font-size: 14px;
-        border: 1px solid #eee;
-        background: #fff;
+        border: 1px solid @cube-default-border-color;
+        background: @cube-default-bg;
         border-radius: 2px;
         padding: 0 4px;
       }
     }
-    .cube-breadcrumb-separator {
+    .@{breadcrumbPrefix}-separator {
       margin: 0 8px;
-      color: #999;
+      color: @cube-disabled-color;
       user-select: none;
     }
   }

@@ -200,6 +200,24 @@
     padding: 0 8px;
     font-size: 12px;
   }
+
+  // 虚线按钮样式
+  &-dashed {
+    color: rgba(0, 0, 0, 0.85);
+    background: @cube-default-bg;
+    border-color: @cube-disabled-border-color;
+    border-style: dashed;
+
+    &:hover {
+      color: @cube-primary-hover-color;
+      border-color: @cube-primary-hover-color;
+    }
+
+    &:active {
+      color: @cube-primary-active-color;
+      border-color: @cube-primary-active-color;
+    }
+  }
 }
 
 // 按钮组
@@ -369,24 +387,5 @@
       height: 10px;
       margin-right: 4px;
     }
-  }
-}
-// 虚线按钮样式
-.@{btnPrefix}-dashed {
-  background: @cube-default-bg;
-  border-style: dashed;
-  border-color: @cube-primary-color;
-  color: @cube-primary-color;
-
-  &:hover {
-    color: @cube-primary-hover-color;
-    border-color: @cube-primary-hover-color;
-    background: @cube-default-bg;
-  }
-
-  &:active {
-    color: @cube-primary-active-color;
-    border-color: @cube-primary-active-color;
-    background: @cube-default-bg;
   }
 }
