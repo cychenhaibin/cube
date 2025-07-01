@@ -15,14 +15,15 @@ export default () => {
         <Button type="highlight">\u9AD8\u4EAE\u6309\u94AE</Button>
       </div>
       <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
+        <Button type="danger">\u5371\u9669\u6309\u94AE</Button>
+        <Button type="ghost">\u5E7D\u7075\u6309\u94AE</Button>
+        <Button type="dashed">\u865A\u7EBF\u6309\u94AE</Button>
+      </div>
+      <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
         <Button disabled>\u7981\u7528\u6309\u94AE</Button>
         <Button type="highlight" disabled>
           \u7981\u7528\u9AD8\u4EAE\u6309\u94AE
         </Button>
-      </div>
-      <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
-        <Button type="danger">\u5371\u9669\u6309\u94AE</Button>
-        <Button type="ghost">\u5E7D\u7075\u6309\u94AE</Button>
       </div>
       <div style={{ display: 'flex', gap: '20px', marginTop: '10px' }}>
         <Button type="link">\u94FE\u63A5\u6309\u94AE</Button>
