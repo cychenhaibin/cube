@@ -4,7 +4,7 @@ import cs from 'classnames';
 import { ConfigContext } from '../ConfigProvider';
 
 interface ButtonProps {
-  type?: 'highlight' | 'default' | 'primary' | 'danger' | 'ghost' | 'link' | 'text';
+  type?: 'highlight' | 'default' | 'primary' | 'danger' | 'ghost' | 'link' | 'text' | 'dashed';
   size?: 'large' | 'default' | 'small';
   disabled?: boolean;
   icon?: ReactNode;
@@ -43,6 +43,7 @@ export default (props: ButtonProps) => {
       [`${btnPrefix}-ghost`]: type === 'ghost',
       [`${btnPrefix}-link`]: type === 'link',
       [`${btnPrefix}-text`]: type === 'text',
+      [`${btnPrefix}-dashed`]: type === 'dashed',
       [`${btnPrefix}-disabled`]: disabled,
       [`${btnPrefix}-with-bg`]: withBg,
       [`${btnPrefix}-${size}`]: size && size !== 'default',
