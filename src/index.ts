@@ -14,3 +14,4 @@ export { default as Select } from './select';
 export { default as InputNumber } from './inputnumber';
 // export { default as FloatButton } from './floatbutton';
 export { default as Breadcrumb } from './breadcrumb';
+export { default as Dropdown } from './dropdown';

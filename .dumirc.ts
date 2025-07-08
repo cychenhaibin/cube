@@ -35,6 +35,7 @@ export default defineConfig({
             { title: 'Icon 图标', link: '/components/icon' },
             // { title: 'FloatButton 悬浮按钮', link: '/components/floatbutton' },
             { title: 'Breadcrumb 面包屑', link: '/components/breadcrumb' },
+            { title: 'Dropdown 下拉菜单', link: '/components/dropdown' },
           ],
         },
         {

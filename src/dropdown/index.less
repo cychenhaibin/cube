@@ -1,0 +1,104 @@
+.cube-dropdown-overlay {
+  min-width: 120px;
+  background: #fff;
+  border-radius: 4px;
+//   padding: 8px 0;
+  position: absolute;
+  z-index: 1000;
+  font-size: 14px;
+  color: #333;
+}
+
+.cube-dropdown-overlay > div > div {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cube-dropdown-overlay > div > div:hover {
+  background: #f5f5f5;
+}
+
+.cube-dropdown-item-disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cube-dropdown-group {
+  padding: 0;
+}
+.cube-dropdown-group-title {
+  font-size: 13px;
+  color: #999;
+  cursor: default;
+}
+.cube-dropdown-group-list {
+  padding: 0;
+} 
+
+.cube-dropdown-menu-root {
+  min-width: 180px;
+  padding: 8px 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.cube-dropdown-group,
+.cube-dropdown-group-list,
+.cube-dropdown-group-title {
+  background: none !important;
+}
+.cube-dropdown-group {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+}
+.cube-dropdown-group-title {
+  font-size: 13px;
+  color: #bfbfbf;
+  margin-bottom: 2px;
+  cursor: default;
+  user-select: none;
+}
+.cube-dropdown-group-list {
+  padding: 0;
+}
+.cube-dropdown-item {
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: none;
+}
+.cube-dropdown-item-has-children > .cube-dropdown-item-arrow {
+  margin-left: auto;
+  font-size: 12px;
+  color: #bfbfbf;
+}
+.cube-dropdown-item:hover:not(.cube-dropdown-item-disabled) {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+.cube-dropdown-item-disabled {
+  color: #bfbfbf;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: none !important;
+}
+.cube-dropdown-submenu-overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  margin-left: 4px;
+  z-index: 1001;
+  padding: 8px 0;
+} 
